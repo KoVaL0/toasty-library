@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ExecutionEnvironment from 'exenv';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { ButtonCancel } from '@components/ButtonCancel';
@@ -12,16 +11,11 @@ import success from '@assets/success.svg';
 
 import '@components/Toast.css';
 import {
-  BOTTOM_LEFT_POSITION,
   BOTTOM_RIGHT_POSITION,
   DEFAULT_CONTENT,
-  ERROR_MODE,
   INFO_MODE,
-  SUCCESS_MODE,
-  TOP_LEFT_POSITION,
-  TOP_RIGHT_POSITION,
-  WARNING_MODE,
 } from '@/constants';
+import { toastPropType } from '@/prop-types';
 
 const Toast = ({ content, configProps }) => {
   console.log('🚀 ~ file: Toast.js ~ line 14 ~ Toast ~ mode', configProps);
@@ -79,15 +73,7 @@ const Toast = ({ content, configProps }) => {
   return ReactDOM.createPortal(toast, container);
 };
 
-Toast.propTypes = {
-  content: PropTypes.string,
-  configProps: PropTypes.shape({
-    mode: PropTypes.oneOf([WARNING_MODE, INFO_MODE, ERROR_MODE, SUCCESS_MODE]),
-    position: PropTypes.oneOf([
-      BOTTOM_LEFT_POSITION, BOTTOM_RIGHT_POSITION, TOP_LEFT_POSITION, TOP_RIGHT_POSITION,
-    ]),
-  }),
-};
+Toast.propTypes = toastPropType;
 
 Toast.defaultProps = {
   content: DEFAULT_CONTENT,
