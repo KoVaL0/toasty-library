@@ -1,7 +1,6 @@
 .toastWrapper {
+    z-index: 9999;
     position: absolute;
-    bottom: 40px;
-    right: 10px;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
@@ -13,7 +12,7 @@
 .titleToast {
     width: 100%;
     margin: 0;
-    font-size: 1em;
+    font-size: 1rem;
     align-self: center;
     text-align: left;
     overflow-wrap: anywhere;
@@ -46,4 +45,24 @@
 .info {
     background-color: #8856b4;
     color: #ffffff;
+}
+
+.bottomRight {
+    bottom: 40px;
+    right: 10px;
+}
+
+.bottomLeft {
+    bottom: 40px;
+    left: 10px;
+}
+
+.topRight {
+    top: 40px;
+    right: 10px;
+}
+
+.topLeft {
+    top: 40px;
+    left: 10px;
 }

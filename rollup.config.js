@@ -1,10 +1,10 @@
 import babel from '@rollup/plugin-babel';
 import alias from '@rollup/plugin-alias';
 import resolve from '@rollup/plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
-import svgr from '@svgr/rollup'
+import svgr from '@svgr/rollup';
 import path from 'path';
 
 const projectRootDir = path.resolve(__dirname);
@@ -14,17 +14,16 @@ export default {
   output: {
     name: 'index',
     file: 'dist/index.js',
-    format: 'es',
+    format: 'esm',
   },
+  external: ['react', 'react-dom'],
   plugins: [
     peerDepsExternal({
       includeDependencies: true,
     }),
     postcss({
-      modules: false,
       extract: true,
-      minimize: false,
-      sourceMap: true
+      sourceMap: true,
     }),
     babel({ exclude: 'node_modules/**' }),
     svgr(),
@@ -43,6 +42,10 @@ export default {
           replacement: path.resolve(projectRootDir, './src/core'),
         },
         {
+          find: '@hook',
+          replacement: path.resolve(projectRootDir, './src/hook'),
+        },
+        {
           find: '@assets',
           replacement: path.resolve(projectRootDir, './public/assets'),
         },
@@ -51,6 +54,8 @@ export default {
     commonjs({
       include: 'node_modules/**',
     }),
-    resolve(),
+    resolve({
+      browser: true,
+    }),
   ],
 };

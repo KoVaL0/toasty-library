@@ -1,26 +1,23 @@
-import React from 'react';
-import { Toast } from '@';
+import React, { useEffect, useState } from 'react';
 
-export class ToastContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { showToast: false };
-  }
+import { Toast } from '@components/Toast';
 
-  handleShowToast() {
-    this.setState({ showToast: true });
-    setTimeout(() => {
-      this.setState({ showToast: false });
-    }, 1000);
-  }
+export const ToastContainer = ({ content, configProps }) => {
+  const [isShow, setIsShow] = useState(true);
 
-  render() {
-    const toast = this.state.showToast ? <Toast mode="error" /> : null;
-    return (
-      <div className="toastContainer">
-        <button type="button" onClick={() => this.handleShowToast()}>Click</button>
-        {toast}
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setIsShow(false);
+    }, 1500);
+    return () => clearTimeout(timeOut);
+  }, [isShow]);
+
+  return (
+    isShow
+      ? (
+        <div id="toastContainer">
+          <Toast content={content} configProps={configProps} />
+        </div>
+      ) : null
+  );
+};

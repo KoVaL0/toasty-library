@@ -29,6 +29,7 @@
           ["@", "./src"],
           ["@components", "./src/components"],
           ["@core", "./src/core"],
+          ["@hook", "./src/hook"],
           ["@assets", "./public/assets"]
         ],
         "extensions": [".js", ".jsx", ".json"]

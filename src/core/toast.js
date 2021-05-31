@@ -1,17 +1,37 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Toast } from '@components';
+import { render } from 'react-dom';
 import ExecutionEnvironment from 'exenv';
 
-export function toast() {
-  let container;
+import { ToastContainer } from '@components/ToastContainer';
+import {
+  ERROR_MODE,
+  INFO_MODE,
+  SUCCESS_MODE,
+  WARNING_MODE,
+} from '@/constants';
+
+const dispatchToasty = (content = 'Toasty', configProps) => {
   if (ExecutionEnvironment.canUseDOM) {
-    container = document.getElementById('toastContainer');
-    console.log(container, 'dddd');
+    const containerDomNode = document.createElement('div');
+    render(<ToastContainer content={content} configProps={configProps} />, containerDomNode);
   }
-  if (!container) {
-    return null;
-  }
-  console.log(ReactDOM.createPortal(<Toast />, container));
-  return ReactDOM.createPortal(<Toast />, container);
-}
+};
+
+const toast = (content, configProps) => {
+  dispatchToasty(content, configProps);
+};
+
+toast.error = (content, configProps) => {
+  dispatchToasty(content, { ...configProps, mode: ERROR_MODE });
+};
+toast.success = (content, configProps) => {
+  dispatchToasty(content, { ...configProps, mode: SUCCESS_MODE });
+};
+toast.warning = (content, configProps) => {
+  dispatchToasty(content, { ...configProps, mode: WARNING_MODE });
+};
+toast.info = (content, configProps) => {
+  dispatchToasty(content, { ...configProps, mode: INFO_MODE });
+};
+
+export { toast };
