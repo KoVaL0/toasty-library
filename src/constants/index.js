@@ -1,2 +1,3 @@
-export * from './configProps';
+export * from './options';
+export * from './event';
 export * from './defaultContent';

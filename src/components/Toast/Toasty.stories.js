@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toast } from '@components';
+import Toast from '@components/Toast';
 
 export default {
   title: 'toasty-library/Toasty',
@@ -13,23 +13,23 @@ const Template = (args) => <Toast {...args} />;
 
 export const Info = Template.bind({});
 Info.args = {
-  label: 'Info toasty',
+  content: 'Info toasty',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
-  label: 'Warning toasty',
+  content: 'Warning toasty',
   mode: 'warning',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  label: 'Error toasty',
+  content: 'Error toasty',
   mode: 'error',
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  label: 'Success toasty',
+  content: 'Success toasty',
   mode: 'success',
 };

@@ -2058,6 +2058,13 @@
   "resolved" "https://registry.npmjs.org/builtin-modules/-/builtin-modules-3.2.0.tgz"
   "version" "3.2.0"
 
+"builtins@^2.0.0":
+  "integrity" "sha512-XkkVe5QAb6guWPXTzpSrYpSlN3nqEmrrE2TkAr/tp7idSF6+MONh9WvKrAuR3HiKLvoSgmbs8l1U9IPmMrIoLw=="
+  "resolved" "https://registry.npmjs.org/builtins/-/builtins-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "semver" "^6.0.0"
+
 "call-bind@^1.0.0", "call-bind@^1.0.2":
   "integrity" "sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA=="
   "resolved" "https://registry.npmjs.org/call-bind/-/call-bind-1.0.2.tgz"
@@ -4436,6 +4443,16 @@
   dependencies:
     "glob" "^7.1.3"
 
+"rollup-plugin-auto-external@^2.0.0":
+  "integrity" "sha512-HQM3ZkZYfSam1uoZtAB9sK26EiAsfs1phrkf91c/YX+S07wugyRXSigBxrIwiLr5EPPilKYmoMxsrnlGBsXnuQ=="
+  "resolved" "https://registry.npmjs.org/rollup-plugin-auto-external/-/rollup-plugin-auto-external-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "builtins" "^2.0.0"
+    "read-pkg" "^3.0.0"
+    "safe-resolve" "^1.0.0"
+    "semver" "^5.5.0"
+
 "rollup-plugin-commonjs@^10.1.0":
   "integrity" "sha512-jlXbjZSQg8EIeAAvepNwhJj++qJWNJw1Cl0YnOqKtP5Djx+fFGkp3WRh+W0ASCaFG5w1jhmzDxgu3SJuVxPF4Q=="
   "resolved" "https://registry.npmjs.org/rollup-plugin-commonjs/-/rollup-plugin-commonjs-10.1.0.tgz"
@@ -4446,6 +4463,11 @@
     "magic-string" "^0.25.2"
     "resolve" "^1.11.0"
     "rollup-pluginutils" "^2.8.1"
+
+"rollup-plugin-npm@^2.0.0":
+  "integrity" "sha1-iij/21FgvI4eNx3jntcfrwCdZVw="
+  "resolved" "https://registry.npmjs.org/rollup-plugin-npm/-/rollup-plugin-npm-2.0.0.tgz"
+  "version" "2.0.0"
 
 "rollup-plugin-peer-deps-external@^2.2.4":
   "integrity" "sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g=="
@@ -4486,7 +4508,7 @@
   dependencies:
     "estree-walker" "^0.6.1"
 
-"rollup@*", "rollup@^1.20.0||^2.0.0", "rollup@^2.42.0", "rollup@^2.48.0", "rollup@>=1.12.0":
+"rollup@*", "rollup@^1.20.0||^2.0.0", "rollup@^2.42.0", "rollup@^2.48.0", "rollup@>=0.45.2", "rollup@>=1.12.0":
   "integrity" "sha512-Ztz4NurU2LbS3Jn5rlhnYv35z6pkjBUmYKr94fOBIKINKRO6kug9NTFHArT7jqwMP2kqEZ39jJuEtkk91NBltQ=="
   "resolved" "https://registry.npmjs.org/rollup/-/rollup-2.50.5.tgz"
   "version" "2.50.5"
@@ -4502,6 +4524,11 @@
   "integrity" "sha512-6pNbSMW6OhAi9j+N8V+U715yBQsaWJ7eyEUaOrawX+isg5ZxhUlV1NipNtgaKHmFGiABwt+ZF04Ii+3Xjkg+8w=="
   "resolved" "https://registry.npmjs.org/safe-identifier/-/safe-identifier-0.4.2.tgz"
   "version" "0.4.2"
+
+"safe-resolve@^1.0.0":
+  "integrity" "sha1-/jT40p16O+z9JJ0KqKeZtcPPZVk="
+  "resolved" "https://registry.npmjs.org/safe-resolve/-/safe-resolve-1.0.0.tgz"
+  "version" "1.0.0"
 
 "sax@~1.2.4":
   "integrity" "sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw=="
@@ -4535,6 +4562,11 @@
     "ajv-keywords" "^3.5.2"
 
 "semver@^5.3.0":
+  "integrity" "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ=="
+  "resolved" "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz"
+  "version" "5.7.1"
+
+"semver@^5.5.0":
   "integrity" "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ=="
   "resolved" "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz"
   "version" "5.7.1"

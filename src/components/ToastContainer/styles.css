@@ -1,0 +1,62 @@
+.toastContainer {
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 9999;
+}
+
+.bottomRight {
+    bottom: 1em;
+    right: 1em;
+    animation-duration: 0.3s;
+    animation-name: emergence-right;
+}
+
+.bottomLeft {
+    bottom: 1em;
+    left: 1em;
+    animation-duration: 0.3s;
+    animation-name: emergence-left;
+}
+
+.topRight {
+    top: 1em;
+    right: 1em;
+    animation-duration: 0.3s;
+    animation-name: emergence-right;
+}
+
+.topLeft {
+    top: 1em;
+    left: 1em;
+    animation-duration: 0.3s;
+    animation-name: emergence-left;
+}
+
+
+@keyframes emergence-right {
+    0% {
+        transform: translateX(100%);
+    }
+
+    75% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes emergence-left {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    75% {
+        transform: translateX(+10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

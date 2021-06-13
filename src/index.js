@@ -1,5 +1,2 @@
-import '@components/Toast.css';
-import '@components/ButtonCancel.css';
-
-export { toast } from '@core/toast';
-export { ToastContainer, Toast } from '@components/index';
+export { toast } from '@/core/toast';
+export { ToastContainer, Toast } from '@/components/index';
