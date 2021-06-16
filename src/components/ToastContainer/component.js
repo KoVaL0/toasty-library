@@ -1,25 +1,23 @@
 import React from 'react';
 
-import { useToastContainer } from '@/hook/useToastContainer';
+import { useToastContainer } from '@/hooks/useToastContainer';
 import { toastDefaultProps, toastPropType } from '@/prop-types';
 import Toast from '@/components/Toast';
 
-import './styles.css';
+import './styles.scss';
 
 const ToastContainer = (props) => {
   const { getToastToRender } = useToastContainer(props);
 
   return (
-    <div>
-      <div id="toastContainer-bottomRight" className="toastContainer bottomRight" />
-      <div id="toastContainer-bottomLeft" className="toastContainer bottomLeft" />
-      <div id="toastContainer-topRight" className="toastContainer topRight" />
-      <div id="toastContainer-topLeft" className="toastContainer topLeft" />
-
+    <div id="toastContainer">
       {getToastToRender(({ content, options }) => (
-        <div key={options.toastId}>
-          <Toast options={options} position={props.position} content={content} />
-        </div>
+        <Toast
+          key={options.toastId}
+          options={options}
+          position={props.position}
+          content={content}
+        />
       ))}
     </div>
   );

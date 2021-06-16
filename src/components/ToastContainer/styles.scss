@@ -8,32 +8,32 @@
     bottom: 1em;
     right: 1em;
     animation-duration: 0.3s;
-    animation-name: emergence-right;
+    animation-name: wave-right;
 }
 
 .bottomLeft {
     bottom: 1em;
     left: 1em;
     animation-duration: 0.3s;
-    animation-name: emergence-left;
+    animation-name: wave-left;
 }
 
 .topRight {
     top: 1em;
     right: 1em;
     animation-duration: 0.3s;
-    animation-name: emergence-right;
+    animation-name: wave-right;
 }
 
 .topLeft {
     top: 1em;
     left: 1em;
     animation-duration: 0.3s;
-    animation-name: emergence-left;
+    animation-name: wave-left;
 }
 
 
-@keyframes emergence-right {
+@keyframes wave-right {
     0% {
         transform: translateX(100%);
     }
@@ -47,7 +47,7 @@
     }
 }
 
-@keyframes emergence-left {
+@keyframes wave-left {
     0% {
         transform: translateX(-100%);
     }
@@ -58,5 +58,15 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes emergence {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

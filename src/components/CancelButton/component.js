@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { WHITE } from '@/constants/options';
+import { WHITE_TOAST_COLOR } from '@/constants/options';
 
-import './styles.css';
+import './styles.scss';
 
-const CancelButton = ({ color, closeToast, id }) => (
-  <svg onClick={closeToast(id)} className="cancelButton" fill={color}>
+const CancelButton = ({ color, onClose, id }) => (
+  <svg onClick={onClose(id)} className="cancelButton" fill={color}>
     <g>
       <title>Close</title>
       <rect height={4} width={20} rx="0.3em" transform="rotate(45 0 10)" />
@@ -17,10 +17,14 @@ const CancelButton = ({ color, closeToast, id }) => (
 
 CancelButton.propTypes = {
   color: PropTypes.string,
+  onClose: PropTypes.func,
+  id: PropTypes.string,
 };
 
 CancelButton.defaultProps = {
-  color: WHITE,
+  color: WHITE_TOAST_COLOR,
+  onClose: () => {},
+  id: '1',
 };
 
 export default CancelButton;

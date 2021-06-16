@@ -1,23 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import ExecutionEnvironment from 'exenv';
-
-import ToastContainer from '@/components/ToastContainer';
 import { defaultOptions } from '@/core/defaultOptions';
 import { renderController } from '@/core/renderController';
 import {
+  DISPATCH_SHOW_TOAST,
   ERROR_MODE,
   INFO_MODE,
-  SHOW,
   SUCCESS_MODE,
   WARNING_MODE,
 } from '@/constants';
-
-const containers = new Map();
-
-const isAnyContainerMounted = () => (
-  containers.size > 0
-);
 
 const generateToastId = () => (
   Math.random()
@@ -38,14 +27,7 @@ const mergeOptions = (options, mode) => ({
 });
 
 const dispatchToast = (content, options) => {
-  if (isAnyContainerMounted()) {
-    renderController.appendToast(SHOW, content, options);
-  } else if (ExecutionEnvironment.canUseDOM) {
-    const containerDomNode = document.createElement('div');
-    containers.set(options.toastId, containerDomNode);
-    render(<ToastContainer content={content} options={options} />, containerDomNode);
-  }
-  return options.toastId;
+  renderController.appendToast(DISPATCH_SHOW_TOAST, content, options);
 };
 
 const createToastByType = (mode) => (content, options) => {

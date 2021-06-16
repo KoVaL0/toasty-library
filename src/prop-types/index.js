@@ -21,6 +21,7 @@ export const toastPropType = {
       BOTTOM_LEFT_POSITION, BOTTOM_RIGHT_POSITION, TOP_LEFT_POSITION, TOP_RIGHT_POSITION,
     ]),
     timeShow: pt.number,
+    color: pt.string,
   }),
 };
 
@@ -30,5 +31,6 @@ export const toastDefaultProps = {
   options: {
     mode: INFO_MODE,
     timeShow: 1500,
+    color: null,
   },
 };

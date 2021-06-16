@@ -1,4 +1,5 @@
-import { SHOW } from '@/constants';
+import { DISPATCH_SHOW_TOAST } from '@/constants';
+import { DEFAULT_MAX_ACTIVE_TOAST } from '../constants/options';
 
 export const renderController = {
   eventsList: new Map(),
@@ -16,7 +17,7 @@ export const renderController = {
 
   appendToast(event, content, options) {
     if (this.eventsList.has(event)) {
-      if (this.listOfActiveToast.size < 3) {
+      if (this.listOfActiveToast.size < DEFAULT_MAX_ACTIVE_TOAST) {
         this.listOfActiveToast.set(options.toastId, { content, options });
         this.eventsList.get(event).forEach((callback) => {
           callback(options);
@@ -41,13 +42,13 @@ export const renderController = {
     if (this.queueList.size > 0) {
       const renderToast = {};
       this.queueList.forEach((value, key) => {
-        if (this.listOfActiveToast.size < 3 && !renderToast.key) {
+        if (this.listOfActiveToast.size < DEFAULT_MAX_ACTIVE_TOAST && !renderToast.key) {
           renderToast.key = key;
           renderToast.value = value;
         }
       });
       if (renderToast.key) {
-        this.appendToast(SHOW, renderToast.value.content, renderToast.value.options);
+        this.appendToast(DISPATCH_SHOW_TOAST, renderToast.value.content, renderToast.value.options);
         this.queueList.delete(renderToast.key);
       }
     }

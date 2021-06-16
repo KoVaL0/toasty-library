@@ -1,3 +1,7 @@
 node_modules/
 dist/
 .idea
+
+/example/.parcel-cache/
+/example/dist/
+/example/node_modules/

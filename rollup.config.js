@@ -3,6 +3,7 @@ import alias from '@rollup/plugin-alias';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
+import sass from 'rollup-plugin-sass';
 import svgr from '@svgr/rollup';
 import path from 'path';
 
@@ -24,6 +25,7 @@ export default {
     }),
     babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
     svgr(),
+    sass(),
     alias({
       entries: [
         {

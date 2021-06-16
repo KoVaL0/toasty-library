@@ -7,24 +7,24 @@
     width: 300px;
     height: 80px;
     margin-top: 10px;
-}
 
-.titleToast {
-    width: 100%;
-    margin: 0;
-    font-size: 1rem;
-    align-self: center;
-    text-align: left;
-    overflow-wrap: anywhere;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.iconToast {
-    margin-right: 10px;
-    width: 40px;
+    .titleToast {
+        width: 100%;
+        margin: 0;
+        font-size: 1rem;
+        align-self: center;
+        text-align: left;
+        overflow-wrap: anywhere;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .iconToast {
+        margin-right: 10px;
+        width: 40px;
+    }
 }
 
 .warning {

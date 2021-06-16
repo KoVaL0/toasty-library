@@ -6,16 +6,16 @@ import classNames from 'classnames';
 import CancelButton from '@/components/CancelButton';
 import { renderController } from '@/core/renderController';
 import { toastDefaultProps, toastPropType } from '@/prop-types';
-import { REMOVE } from '@/constants';
+import { DISPATCH_REMOVE_TOAST } from '@/constants';
 import info from '@assets/information.svg';
 import warning from '@assets/warning.svg';
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import {
-  BLACK, ERROR_MODE, SUCCESS_MODE, WARNING_MODE, WHITE,
+  BLACK_TOAST_COLOR, ERROR_MODE, SUCCESS_MODE, WARNING_MODE, WHITE_TOAST_COLOR,
 } from '@/constants/options';
 
-import './styles.css';
+import './styles.scss';
 
 const Toast = ({
   options, position, content,
@@ -33,7 +33,7 @@ const Toast = ({
   switch (options.mode) {
     case WARNING_MODE: {
       Icon = warning;
-      color = BLACK;
+      color = BLACK_TOAST_COLOR;
       break;
     }
     case ERROR_MODE: {
@@ -46,7 +46,7 @@ const Toast = ({
     }
     default: {
       Icon = info;
-      color = WHITE;
+      color = WHITE_TOAST_COLOR;
       break;
     }
   }
@@ -68,23 +68,37 @@ const Toast = ({
     return null;
   }
 
-  const closeToast = (id) => () => {
-    renderController.removeToast(REMOVE, id);
+  const handleClose = (id) => () => {
+    renderController.removeToast(DISPATCH_REMOVE_TOAST, id);
   };
 
-  const container = document.getElementById(`toastContainer-${getToastPosition()}`);
+  const getContainer = () => document.getElementById(`toastContainer-${getToastPosition()}`);
+
+  const createContainer = () => {
+    const toastContainer = document.getElementById('toastContainer');
+    const div = document.createElement('div');
+    div.id = `toastContainer-${getToastPosition()}`;
+    div.className = `toastContainer ${getToastPosition()}`;
+    toastContainer.append(div);
+  };
+
+  if (!getContainer()) {
+    createContainer();
+  }
+
+  const getBackgroundColor = () => ({ backgroundColor: options.color });
 
   const toast = (
-    <div className={toastWrapper}>
-      <Icon className={iconToast} />
-      <p className={titleToast}>
+    <div className={toastWrapper} style={getBackgroundColor()} key={options.toastId}>
+      <Icon className={iconToast} style={getBackgroundColor()} />
+      <p className={titleToast} style={getBackgroundColor()}>
         {content}
       </p>
-      <CancelButton id={options.toastId} color={color} closeToast={closeToast} />
+      <CancelButton id={options.toastId} color={color} onClose={handleClose} />
     </div>
   );
 
-  return ReactDOM.createPortal(toast, container);
+  return ReactDOM.createPortal(toast, getContainer());
 };
 
 Toast.propTypes = toastPropType;

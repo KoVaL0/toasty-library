@@ -1,3 +1,3 @@
-export const SHOW = 'SHOW';
-export const REMOVE = 'REMOVE';
-export const ADD = 'ADD';
+export const DISPATCH_SHOW_TOAST = 'DISPATCH_SHOW_TOAST';
+export const DISPATCH_REMOVE_TOAST = 'DISPATCH_REMOVE_TOAST';
+export const DISPATCH_ADD_TOAST = 'DISPATCH_ADD_TOAST';
