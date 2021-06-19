@@ -8,8 +8,9 @@
         "build": "parcel build index.html"
     },
     "dependencies": {
-        "react-app-polyfill": "^1.0.0",
-        "bootstrap": "^4.6.0"
+        "bootstrap": "^4.6.0",
+        "react": "^17.0.2",
+        "react-app-polyfill": "^1.0.0"
     },
     "alias": {
         "react": "../node_modules/react",
@@ -20,6 +21,7 @@
         "@babel/core": "^7.0.0-0",
         "@babel/plugin-proposal-class-properties": "^7.8.3",
         "@babel/preset-react": "^7.8.3",
+        "@parcel/transformer-sass": "^2.0.0-beta.2",
         "parcel": "^2.0.0-beta.2",
         "sass": "^1.25.0"
     }

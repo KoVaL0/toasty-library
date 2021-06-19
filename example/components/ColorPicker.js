@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ColorPicker = ({ colorToast, setColorToast }) => {
   const handleColorToast = (e) => {
@@ -6,7 +6,7 @@ const ColorPicker = ({ colorToast, setColorToast }) => {
   };
 
   return (
-    <div className="position-absolute" style={{ right: "25%" }}>
+    <div className="position-absolute" style={{ right: '25%' }}>
       <label htmlFor="ColorPicker" className="form-label text-white">
         Color picker
       </label>

@@ -6,7 +6,15 @@ Now integrating notifications into your project will be the easiest task. Also, 
 #### Installation
 ```
 $ git clone https://github.com/KoVaL0/toasty-library.git
+$ npm i
 $ npm run build
+```
+
+>Note: Follow the instructions below to view the start page.
+```
+$ cd example
+$ npm i
+$ npm run start
 ```
 
 ### Main functionality:
@@ -47,7 +55,6 @@ toast.success('This contains the content of the notification!', {
     color: "#000000",
     timeShow: "1500",
     animation: "wave",
-    indents: "",
 });
 ```
 ### Possible types of notifications:
@@ -57,3 +64,30 @@ toast.success('Toasty Success!');
 toast.warning('Toasty Warning!');
 toast.info('Toasty Info!');
 ```
+### You can change the indentation styles as follows (SCSS):
+
+This requires you to override the style classes in your root style file
+```
+$indents: 3em;
+
+.toastContainer-bottomRight {
+    bottom: $indents;
+    right: $indents;
+}
+
+.toastContainer-bottomLeft {
+    bottom: $indents;
+    left: $indents;
+}
+
+.toastContainer-topRight {
+    top: $indents;
+    right: $indents;
+}
+
+.toastContainer-topLeft {
+    top: $indents;
+    left: $indents;
+}
+```
+> Note: When using CSS: bottom: `3em`;

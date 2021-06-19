@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CheckBoxDefaultColor = ({
   showColorPicker,
@@ -6,7 +6,7 @@ const CheckBoxDefaultColor = ({
   setShowColorPicker,
 }) => {
   const handleCheckBoxDefaultColor = (e) => {
-    setColorToast(null);
+    setColorToast('');
     setShowColorPicker((prev) => !prev);
   };
 

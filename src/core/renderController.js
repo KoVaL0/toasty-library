@@ -1,10 +1,19 @@
 import { DISPATCH_SHOW_TOAST } from '@/constants';
 import { DEFAULT_MAX_ACTIVE_TOAST } from '../constants/options';
 
-export const renderController = {
-  eventsList: new Map(),
-  listOfActiveToast: new Map(),
-  queueList: new Map(),
+let instance = null;
+class renderController {
+  constructor() {
+    if (!instance) {
+      instance = this;
+    }
+
+    this.eventsList = new Map();
+    this.listOfActiveToast = new Map();
+    this.queueList = new Map();
+
+    return instance;
+  }
 
   addListener(event, callback) {
     if (!this.eventsList.has(event)) {
@@ -13,7 +22,7 @@ export const renderController = {
 
     this.eventsList.get(event).push(callback);
     return this;
-  },
+  }
 
   appendToast(event, content, options) {
     if (this.eventsList.has(event)) {
@@ -26,7 +35,7 @@ export const renderController = {
         this.queueList.set(options.toastId, { content, options });
       }
     }
-  },
+  }
 
   removeToast(event, id) {
     if (this.eventsList.has(event)) {
@@ -36,7 +45,7 @@ export const renderController = {
       });
     }
     this.appendToastFromQueue();
-  },
+  }
 
   appendToastFromQueue() {
     if (this.queueList.size > 0) {
@@ -52,5 +61,7 @@ export const renderController = {
         this.queueList.delete(renderToast.key);
       }
     }
-  },
-};
+  }
+}
+
+export default renderController;

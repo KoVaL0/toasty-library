@@ -1,35 +1,45 @@
+$indents: 1em;
+
 .toastContainer {
 	box-sizing: border-box;
 	position: fixed;
 	z-index: 9999;
+    
+    &-bottomRight {
+        bottom: $indents;
+        right: $indents;
+    }
+    
+    &-bottomLeft {
+        bottom: $indents;
+        left: $indents;
+    }
+    
+    &-topRight {
+        top: $indents;
+        right: $indents;
+    }
+    
+    &-topLeft {
+        top: $indents;
+        left: $indents;
+    }
 }
 
-.bottomRight {
-    bottom: 1em;
-    right: 1em;
-    animation-duration: 0.3s;
-    animation-name: wave-right;
+.animation {
+    animation-duration: 0.3s; 
 }
 
-.bottomLeft {
-    bottom: 1em;
-    left: 1em;
-    animation-duration: 0.3s;
-    animation-name: wave-left;
+.wave {
+    &_left {
+        animation-name: wave-left;
+    }
+    &_right {
+        animation-name: wave-right;
+    }
 }
-
-.topRight {
-    top: 1em;
-    right: 1em;
-    animation-duration: 0.3s;
-    animation-name: wave-right;
-}
-
-.topLeft {
-    top: 1em;
-    left: 1em;
-    animation-duration: 0.3s;
-    animation-name: wave-left;
+.emergence {
+    animation-name: emergence;
 }
 
 
