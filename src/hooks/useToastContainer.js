@@ -1,16 +1,16 @@
 import { useEffect, useReducer } from 'react';
 
 import { DISPATCH_ADD_TOAST, DISPATCH_REMOVE_TOAST, DISPATCH_SHOW_TOAST } from '@/constants';
-import renderController from '@/core/renderController';
+import RenderController from '@/core/renderController';
 import { reducer } from '@/hooks/toastContainerReducer';
 
 export const useToastContainer = () => {
   const [toastIds, dispatch] = useReducer(reducer, []);
-  const service = new renderController();
+  const toastController = new RenderController();
 
   const buildToast = (options) => {
     setTimeout(() => {
-      service.removeToast(DISPATCH_REMOVE_TOAST, options.toastId);
+      toastController.removeToast(DISPATCH_REMOVE_TOAST, options.toastId);
     }, options.timeShow);
     dispatch({
       type: DISPATCH_ADD_TOAST,
@@ -26,14 +26,14 @@ export const useToastContainer = () => {
   };
 
   useEffect(() => {
-    service.addListener(DISPATCH_SHOW_TOAST, buildToast);
-    service.addListener(DISPATCH_REMOVE_TOAST, closeToast);
-    return () => service.list.clear();
+    toastController.addListener(DISPATCH_SHOW_TOAST, buildToast);
+    toastController.addListener(DISPATCH_REMOVE_TOAST, closeToast);
+    return () => toastController.list.clear();
   }, []);
 
   const getToastToRender = (callback) => {
     const toastToRender = {};
-    const toastList = service.listOfActiveToast;
+    const toastList = toastController.listOfActiveToast;
 
     for (let i = 0; i < toastList.size; i += 1) {
       const toast = toastList.get(toastIds[i]);

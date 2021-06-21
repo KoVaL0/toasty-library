@@ -1,9 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { useToastContainer } from '@/hooks/useToastContainer';
 import { toastDefaultProps, toastPropType } from '@/prop-types';
 import Toast from '@/components/Toast';
-import classNames from 'classnames';
 
 import './styles.scss';
 

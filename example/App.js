@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-import Button from './Button';
-import InputToastContent from './InputToastContent';
-import CheckBoxDefaultColor from './CheckBoxDefaultColor';
-import ColorPicker from './ColorPicker';
-import InputTimeShow from './InputTimeShow';
-import SelectToastPosition from './SelectToastPosition';
-import SelectToastType from './SelectToastType';
-import SelectToastAnimation from './SelectToastAnimation';
-import { ToastContainer } from '../../dist/index';
+import Button from './components/Button';
+import InputToastContent from './components/InputToastContent';
+import CheckBoxDefaultColor from './components/CheckBoxDefaultColor';
+import ColorPicker from './components/ColorPicker';
+import InputTimeShow from './components/InputTimeShow';
+import SelectToastPosition from './components/SelectToastPosition';
+import SelectToastType from './components/SelectToastType';
+import SelectToastAnimation from './components/SelectToastAnimation';
+import { ToastContainer } from 'toasty-library';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../dist/index.css';
+import 'toasty-library/index.css';
 
 export const App = () => {
   const [contentToast, setContentToast] = useState('Toast notification');

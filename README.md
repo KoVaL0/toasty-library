@@ -71,22 +71,22 @@ This requires you to override the style classes in your root style file
 ```
 $indents: 3em;
 
-.toastContainer-bottomRight {
+#toastContainer-bottomRight {
     bottom: $indents;
     right: $indents;
 }
 
-.toastContainer-bottomLeft {
+#toastContainer-bottomLeft {
     bottom: $indents;
     left: $indents;
 }
 
-.toastContainer-topRight {
+#toastContainer-topRight {
     top: $indents;
     right: $indents;
 }
 
-.toastContainer-topLeft {
+#toastContainer-topLeft {
     top: $indents;
     left: $indents;
 }

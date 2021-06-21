@@ -11,5 +11,7 @@ export const TOP_LEFT_POSITION = 'topLeft';
 export const WHITE_TOAST_COLOR = 'white';
 export const BLACK_TOAST_COLOR = 'black';
 
-export const DEFAULT_TIME_SHOW_TOAST = 3000;
+export const DEFAULT_TIME_SHOW_TOAST = '3000';
 export const DEFAULT_MAX_ACTIVE_TOAST = 3;
+
+export const ANIMATION_WAVE_TOAST = 'wave';

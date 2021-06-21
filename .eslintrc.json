@@ -67,6 +67,6 @@
       "required": {
         "some": [ "nesting", "id"  ]
       }
-    }],
+    }]
   }
 }

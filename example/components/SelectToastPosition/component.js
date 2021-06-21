@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const SelectToastPosition = ({ positionToast, setPositionToast }) => {
   const handleSelectPositionToast = (e) => {
@@ -6,7 +6,7 @@ const SelectToastPosition = ({ positionToast, setPositionToast }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <label htmlFor="SelectToastPosition" className="form-label text-white">
         Position
       </label>
@@ -22,7 +22,7 @@ const SelectToastPosition = ({ positionToast, setPositionToast }) => {
         <option value="topRight">topRight</option>
         <option value="topLeft">topLeft</option>
       </select>
-    </React.Fragment>
+    </>
   );
 };
 

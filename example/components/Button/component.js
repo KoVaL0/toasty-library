@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { toast } from '../../dist/index';
+import { toast } from 'toasty-library';
 
 const Button = ({
   content, type, position, timeShow, color, animation,

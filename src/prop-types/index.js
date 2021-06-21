@@ -11,6 +11,7 @@ import {
   TOP_RIGHT_POSITION,
   WARNING_MODE,
 } from '@/constants';
+import { ANIMATION_WAVE_TOAST, DEFAULT_TIME_SHOW_TOAST } from '../constants/options';
 
 export const toastPropType = {
   content: pt.string,
@@ -22,6 +23,7 @@ export const toastPropType = {
     ]),
     timeShow: pt.string,
     color: pt.string,
+    animation: pt.string,
   }),
 };
 
@@ -30,7 +32,8 @@ export const toastDefaultProps = {
   position: BOTTOM_RIGHT_POSITION,
   options: {
     mode: INFO_MODE,
-    timeShow: '1500',
-    color: null,
+    timeShow: DEFAULT_TIME_SHOW_TOAST,
+    color: '',
+    animation: ANIMATION_WAVE_TOAST,
   },
 };

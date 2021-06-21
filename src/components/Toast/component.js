@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import CancelButton from '@/components/CancelButton';
-import renderController from '@/core/renderController';
+import RenderController from '@/core/renderController';
 import { toastDefaultProps, toastPropType } from '@/prop-types';
 import { DISPATCH_REMOVE_TOAST } from '@/constants';
 import info from '@assets/information.svg';
@@ -10,11 +10,12 @@ import warning from '@assets/warning.svg';
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import {
+  ANIMATION_WAVE_TOAST,
   BLACK_TOAST_COLOR,
-  BOTTOM_LEFT_POSITION,
-  ERROR_MODE, SUCCESS_MODE,
-  TOP_LEFT_POSITION,
-  WARNING_MODE, WHITE_TOAST_COLOR,
+  BOTTOM_LEFT_POSITION, ERROR_MODE,
+  SUCCESS_MODE,
+  TOP_LEFT_POSITION, WARNING_MODE,
+  WHITE_TOAST_COLOR,
 } from '@/constants/options';
 
 import './styles.scss';
@@ -56,7 +57,7 @@ const Toast = ({
   const toastWrapper = classNames('toastWrapper', 'animation', {
     [options.mode]: options.mode,
     [options.animation]: options.animation,
-    [getWaveAnimation()]: options.animation === 'wave',
+    [getWaveAnimation()]: options.animation === ANIMATION_WAVE_TOAST,
   });
 
   const iconToast = classNames('iconToast', {
@@ -68,8 +69,8 @@ const Toast = ({
   });
 
   const handleClose = (id) => () => {
-    const service = new renderController();
-    service.removeToast(DISPATCH_REMOVE_TOAST, id);
+    const toastController = new RenderController();
+    toastController.removeToast(DISPATCH_REMOVE_TOAST, id);
   };
 
   const getBackgroundColor = () => ({ backgroundColor: options.color });

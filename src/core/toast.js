@@ -1,5 +1,5 @@
 import { defaultOptions } from '@/core/defaultOptions';
-import renderController from '@/core/renderController';
+import RenderController from '@/core/renderController';
 import {
   DISPATCH_SHOW_TOAST,
   ERROR_MODE,
@@ -27,8 +27,8 @@ const mergeOptions = (options, mode) => ({
 });
 
 const dispatchToast = (content, options) => {
-  const service = new renderController();
-  service.appendToast(DISPATCH_SHOW_TOAST, content, options);
+  const toastController = new RenderController();
+  toastController.appendToast(DISPATCH_SHOW_TOAST, content, options);
 };
 
 const createToastByType = (mode) => (content, options) => {

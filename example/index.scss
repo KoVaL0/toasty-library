@@ -1,21 +1,21 @@
 $indents: 2em;
 
-.toastContainer-bottomRight {
+#toastContainer-bottomRight {
     bottom: $indents;
     right: $indents;
 }
 
-.toastContainer-bottomLeft {
+#toastContainer-bottomLeft {
     bottom: $indents;
     left: $indents;
 }
 
-.toastContainer-topRight {
+#toastContainer-topRight {
     top: $indents;
     right: $indents;
 }
 
-.toastContainer-topLeft {
+#toastContainer-topLeft {
     top: $indents;
     left: $indents;
 }
