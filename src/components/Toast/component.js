@@ -11,10 +11,9 @@ import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import {
   ANIMATION_WAVE_TOAST,
-  BLACK_TOAST_COLOR,
+  ToastColor,
   ToastMode,
   ToastPositions,
-  WHITE_TOAST_COLOR,
   WavePosition,
 } from '@/constants/options';
 
@@ -29,7 +28,7 @@ const Toast = ({
   switch (options.mode) {
     case ToastMode.WARNING: {
       Icon = warning;
-      color = BLACK_TOAST_COLOR;
+      color = ToastColor.BLACK;
       break;
     }
     case ToastMode.ERROR: {
@@ -42,7 +41,7 @@ const Toast = ({
     }
     default: {
       Icon = info;
-      color = WHITE_TOAST_COLOR;
+      color = ToastColor.WHITE;
       break;
     }
   }

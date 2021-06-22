@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { WHITE_TOAST_COLOR } from '@/constants/options';
+import { ToastColor } from '@/constants/options';
 
 import './styles.scss';
 
@@ -28,7 +28,7 @@ CancelButton.propTypes = {
 };
 
 CancelButton.defaultProps = {
-  color: WHITE_TOAST_COLOR,
+  color: ToastColor.WHITE,
   id: '1',
 };
 

@@ -12,11 +12,14 @@ export const ToastPositions = {
   TOP_LEFT: 'topLeft',
 };
 
-export const WHITE_TOAST_COLOR = 'white';
-export const BLACK_TOAST_COLOR = 'black';
+export const ToastColor = {
+  WHITE: 'white',
+  BLACK: 'black',
+};
 
 export const DEFAULT_TIME_SHOW_TOAST = '3000';
 export const DEFAULT_MAX_ACTIVE_TOAST = 3;
+export const DEFAULT_CONTENT = 'This is toasty notification';
 
 export const ANIMATION_WAVE_TOAST = 'wave';
 export const WavePosition = {

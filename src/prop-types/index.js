@@ -4,8 +4,9 @@ import {
   DEFAULT_CONTENT,
   ToastMode,
   ToastPositions,
+  ANIMATION_WAVE_TOAST,
+  DEFAULT_TIME_SHOW_TOAST,
 } from '@/constants';
-import { ANIMATION_WAVE_TOAST, DEFAULT_TIME_SHOW_TOAST } from '../constants/options';
 
 export const toastPropType = {
   content: pt.string,
