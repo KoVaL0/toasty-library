@@ -1,11 +1,11 @@
 import {
-  BOTTOM_RIGHT_POSITION,
   DEFAULT_TIME_SHOW_TOAST,
-  INFO_MODE,
+  ToastMode,
+  ToastPositions,
 } from '@/constants';
 
 export const defaultOptions = {
-  mode: INFO_MODE,
-  position: BOTTOM_RIGHT_POSITION,
+  mode: ToastMode.INFO,
+  position: ToastPositions.BOTTOM_RIGHT,
   timeShow: DEFAULT_TIME_SHOW_TOAST,
 };

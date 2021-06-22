@@ -1,5 +1,5 @@
 import { DISPATCH_SHOW_TOAST } from '@/constants';
-import { DEFAULT_MAX_ACTIVE_TOAST } from '../constants/options';
+import { DEFAULT_MAX_ACTIVE_TOAST } from '@/constants/options';
 
 let instance = null;
 class RenderController {

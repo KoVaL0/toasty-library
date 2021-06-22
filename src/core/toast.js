@@ -2,10 +2,7 @@ import { defaultOptions } from '@/core/defaultOptions';
 import RenderController from '@/core/renderController';
 import {
   DISPATCH_SHOW_TOAST,
-  ERROR_MODE,
-  INFO_MODE,
-  SUCCESS_MODE,
-  WARNING_MODE,
+  ToastMode,
 } from '@/constants';
 
 const generateToastId = () => (
@@ -36,12 +33,12 @@ const createToastByType = (mode) => (content, options) => {
 };
 
 const toast = (content, options) => {
-  dispatchToast(content, mergeOptions(options, INFO_MODE));
+  dispatchToast(content, mergeOptions(options, ToastMode.INFO));
 };
 
-toast.error = createToastByType(ERROR_MODE);
-toast.success = createToastByType(SUCCESS_MODE);
-toast.warning = createToastByType(WARNING_MODE);
-toast.info = createToastByType(INFO_MODE);
+toast.error = createToastByType(ToastMode.ERROR);
+toast.success = createToastByType(ToastMode.SUCCESS);
+toast.warning = createToastByType(ToastMode.WARNING);
+toast.info = createToastByType(ToastMode.INFO);
 
 export { toast };

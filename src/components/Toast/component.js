@@ -12,10 +12,10 @@ import success from '@assets/success.svg';
 import {
   ANIMATION_WAVE_TOAST,
   BLACK_TOAST_COLOR,
-  BOTTOM_LEFT_POSITION, ERROR_MODE,
-  SUCCESS_MODE,
-  TOP_LEFT_POSITION, WARNING_MODE,
+  ToastMode,
+  ToastPositions,
   WHITE_TOAST_COLOR,
+  WavePosition,
 } from '@/constants/options';
 
 import './styles.scss';
@@ -27,16 +27,16 @@ const Toast = ({
   let Icon;
 
   switch (options.mode) {
-    case WARNING_MODE: {
+    case ToastMode.WARNING: {
       Icon = warning;
       color = BLACK_TOAST_COLOR;
       break;
     }
-    case ERROR_MODE: {
+    case ToastMode.ERROR: {
       Icon = error;
       break;
     }
-    case SUCCESS_MODE: {
+    case ToastMode.SUCCESS: {
       Icon = success;
       break;
     }
@@ -48,10 +48,11 @@ const Toast = ({
   }
 
   const getWaveAnimation = () => {
-    if (options.position === TOP_LEFT_POSITION || options.position === BOTTOM_LEFT_POSITION) {
-      return 'wave_left';
+    if (options.position === ToastPositions.TOP_LEFT
+      || options.position === ToastPositions.BOTTOM_LEFT) {
+      return WavePosition.LEFT;
     }
-    return 'wave_right';
+    return WavePosition.RIGHT;
   };
 
   const toastWrapper = classNames('toastWrapper', 'animation', {
