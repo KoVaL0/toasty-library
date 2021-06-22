@@ -1,18 +1,25 @@
 import { DISPATCH_SHOW_TOAST } from '@/constants';
 import { DEFAULT_MAX_ACTIVE_TOAST } from '@/constants/options';
 
-let instance = null;
+const singleton = Symbol('singleton');
+const singletonEnforcer = Symbol('singletonEnforcer');
 class RenderController {
-  constructor() {
-    if (!instance) {
-      instance = this;
+  constructor(enforcer) {
+    if (enforcer !== singletonEnforcer) {
+      throw new Error('Cannot construct singleton');
     }
 
     this.eventsList = new Map();
     this.listOfActiveToast = new Map();
     this.queueList = new Map();
+  }
 
-    return instance;
+  static get instance() {
+    if (!this[singleton]) {
+      this[singleton] = new RenderController(singletonEnforcer);
+    }
+
+    return this[singleton];
   }
 
   addListener(event, callback) {

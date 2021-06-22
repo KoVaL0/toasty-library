@@ -70,7 +70,7 @@ const Toast = ({
   });
 
   const handleClose = (id) => () => {
-    const toastController = new RenderController();
+    const toastController = RenderController.instance;
     toastController.removeToast(DISPATCH_REMOVE_TOAST, id);
   };
 

@@ -5,15 +5,21 @@ import { WHITE_TOAST_COLOR } from '@/constants/options';
 
 import './styles.scss';
 
-const CancelButton = ({ color, onClose, id }) => (
-  <svg onClick={onClose(id)} className="cancelButton" fill={color}>
-    <g>
-      <title>Close</title>
-      <rect height={4} width={20} rx="0.3em" transform="rotate(45 0 10)" />
-      <rect height={2} width={20} rx="0.3em" transform="rotate(-45 20 5)" />
-    </g>
-  </svg>
-);
+const CancelButton = ({ color, onClose, id }) => {
+  if (!onClose) {
+    return null;
+  }
+
+  return (
+    <svg onClick={onClose(id)} className="cancelButton" fill={color}>
+      <g>
+        <title>Close</title>
+        <rect height={4} width={20} rx="0.3em" transform="rotate(45 0 10)" />
+        <rect height={2} width={20} rx="0.3em" transform="rotate(-45 20 5)" />
+      </g>
+    </svg>
+  );
+};
 
 CancelButton.propTypes = {
   color: PropTypes.string,
@@ -23,7 +29,6 @@ CancelButton.propTypes = {
 
 CancelButton.defaultProps = {
   color: WHITE_TOAST_COLOR,
-  onClose: () => {},
   id: '1',
 };
 

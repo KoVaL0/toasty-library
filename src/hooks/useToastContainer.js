@@ -2,11 +2,11 @@ import { useEffect, useReducer } from 'react';
 
 import { DISPATCH_ADD_TOAST, DISPATCH_REMOVE_TOAST, DISPATCH_SHOW_TOAST } from '@/constants';
 import RenderController from '@/core/renderController';
-import { reducer } from '@/hooks/toastContainerReducer';
+import { reducer } from '@/reducers/toastContainerReducer';
 
 export const useToastContainer = () => {
   const [toastIds, dispatch] = useReducer(reducer, []);
-  const toastController = new RenderController();
+  const toastController = RenderController.instance;
 
   const buildToast = (options) => {
     setTimeout(() => {

@@ -24,7 +24,7 @@ const mergeOptions = (options, mode) => ({
 });
 
 const dispatchToast = (content, options) => {
-  const toastController = new RenderController();
+  const toastController = RenderController.instance;
   toastController.appendToast(DISPATCH_SHOW_TOAST, content, options);
 };
 
