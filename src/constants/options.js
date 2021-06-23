@@ -13,8 +13,8 @@ export const ToastPositions = {
 };
 
 export const ToastColor = {
-  WHITE: 'white',
-  BLACK: 'black',
+  WHITE: '#ffffff',
+  BLACK: '#000000',
 };
 
 export const DEFAULT_TIME_SHOW_TOAST = '3000';
