@@ -1,16 +1,15 @@
 import pt from 'prop-types';
 
 import {
+  ANIMATION_WAVE_TOAST,
   DEFAULT_CONTENT,
+  DEFAULT_TIME_SHOW_TOAST,
   ToastMode,
   ToastPositions,
-  ANIMATION_WAVE_TOAST,
-  DEFAULT_TIME_SHOW_TOAST,
 } from '@/constants';
 
 export const toastPropType = {
   content: pt.string,
-  position: pt.string,
   options: pt.shape({
     mode: pt.oneOf([ToastMode.WARNING, ToastMode.INFO, ToastMode.ERROR, ToastMode.SUCCESS]),
     position: pt.oneOf([
@@ -27,8 +26,8 @@ export const toastPropType = {
 
 export const toastDefaultProps = {
   content: DEFAULT_CONTENT,
-  position: ToastPositions.BOTTOM_RIGHT,
   options: {
+    position: ToastPositions.BOTTOM_RIGHT,
     mode: ToastMode.INFO,
     timeShow: DEFAULT_TIME_SHOW_TOAST,
     color: '',

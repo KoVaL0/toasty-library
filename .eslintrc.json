@@ -3,6 +3,12 @@
     "browser": true,
     "es2021": true
   },
+  "globals": {
+    "describe": "readonly",
+    "it": "readonly",
+    "expect": "readonly",
+    "jest": "readonly"
+  },
   "extends": [
     "eslint:recommended",
     "airbnb",

@@ -75,8 +75,8 @@ const Toast = ({
 
   const getBackgroundColor = () => ({ backgroundColor: options.color });
 
-  const toast = (
-    <div className={toastWrapper} style={getBackgroundColor()} key={options.toastId}>
+  return (
+    <div className={toastWrapper} style={getBackgroundColor()}>
       <Icon className={iconToast} style={getBackgroundColor()} />
       <p className={titleToast} style={getBackgroundColor()}>
         {content}
@@ -84,8 +84,6 @@ const Toast = ({
       <CancelButton id={options.toastId} color={color} onClose={handleClose} />
     </div>
   );
-
-  return toast;
 };
 
 Toast.propTypes = toastPropType;
