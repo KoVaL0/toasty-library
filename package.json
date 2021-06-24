@@ -1,6 +1,6 @@
 {
   "name": "react-toasty-library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React notification made easy",
   "keywords": [
     "react",
@@ -26,7 +26,10 @@
   },
   "author": "Kovalev A.V.",
   "contributors": [
-    { "name":"Ovchinnikov Vyacheslav", "url":"https://github.com/slava-ovchinnikov"}
+    {
+      "name": "Ovchinnikov Vyacheslav",
+      "url": "https://github.com/slava-ovchinnikov"
+    }
   ],
   "license": "MIT",
   "bugs": {
