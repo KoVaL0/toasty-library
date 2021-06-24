@@ -1,3 +1,4 @@
+[![Node.js Package](https://github.com/KoVaL0/toasty-library/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/KoVaL0/toasty-library/actions/workflows/npm-publish.yml)
 # React-Toasty-library [![github](http://disciplinas.tecnico.ulisboa.pt/leic-sod/2019-2020/labs/_img/github.png)](https://github.com/KoVaL0/toasty-library)
 [![toasty.gif](https://s6.gifyu.com/images/bandicam-2021-06-16-21-55-41-343_Trim-online-video-cutter.com.gif)](https://github.com/KoVaL0/toasty-library)
 
