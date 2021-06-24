@@ -82,7 +82,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-postcss": "^4.0.0",
     "enzyme-to-json": "^3.6.2",
-    "jest-transform-stub": "^2.0.0",
+    "jest-transform-stub": "^2.0.0"
   },
   "dependencies": {
     "classnames": "^2.3.1",
