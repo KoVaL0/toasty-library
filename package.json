@@ -1,10 +1,38 @@
 {
-  "name": "toasty-library",
+  "name": "react-toasty-library",
   "version": "1.0.0",
-  "description": "test project",
+  "description": "React notification made easy",
+  "keywords": [
+    "react",
+    "notification",
+    "toast",
+    "react-component",
+    "react-toastify",
+    "push",
+    "alert"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "style": "dist/index.css",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup --config",
+    "start": "rollup --config -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoVaL0/toasty-library.git"
+  },
+  "author": "Kovalev A.V.",
+  "contributors": [
+    { "name":"Ovchinnikov Vyacheslav", "url":"https://github.com/slava-ovchinnikov"}
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KoVaL0/toasty-library/issues"
+  },
+  "homepage": "https://github.com/KoVaL0/toasty-library",
   "jest": {
     "verbose": true,
     "clearMocks": true,
@@ -25,22 +53,6 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     }
   },
-  "jsnext:main": "dist/index.es.js",
-  "scripts": {
-    "test": "jest",
-    "build": "rollup --config",
-    "start": "rollup --config -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KoVaL0/toasty-library.git"
-  },
-  "author": "Kovalev A.V.",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KoVaL0/toasty-library/issues"
-  },
-  "homepage": "https://github.com/KoVaL0/toasty-library",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",

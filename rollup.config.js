@@ -20,7 +20,7 @@ export default {
   plugins: [
     postcss({
       extract: true,
-      sourceMap: true,
+      minimize: true,
     }),
     babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
     svgr(),

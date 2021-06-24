@@ -7,4 +7,4 @@ dist/
 /example/node_modules/
 
 __snapshots__
-coverage
+coverage/
