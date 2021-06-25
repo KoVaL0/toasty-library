@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/KoVaL0/toasty-library/issues"
   },
-  "homepage": "https://github.com/KoVaL0/toasty-library",
+  "homepage": "https://koval0.github.io/toasty-library/",
   "jest": {
     "verbose": true,
     "clearMocks": true,

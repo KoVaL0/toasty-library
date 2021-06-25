@@ -4,6 +4,7 @@ dist/
 
 /example/.parcel-cache/
 /example/dist/
+/example/build/
 /example/node_modules/
 
 __snapshots__

@@ -7,18 +7,19 @@ Now integrating notifications into your project will be the easiest task. Also, 
 #### Installation
 ```
 $ npm i react-toasty-library
+```
+
+> Note: Follow the instructions below to view the start page.
+
+```
+$ git clone https://github.com/KoVaL0/toasty-library.git
 $ cd toasty-library
 $ npm i
 $ npm run build
-```
-
->Note: Follow the instructions below to view the start page.
-```
 $ cd example
 $ npm i
 $ npm run start
 ```
-
 ### Main functionality:
 
 - Show notifications.
