@@ -37,7 +37,7 @@ $ npm run start
  import React from 'react';
 
   import { ToastContainer, toast } from 'toasty-library';
-  import toasty-library/dist/index.css';
+  import react-toasty-library/dist/index.css';
   
   function App(){
     const notify = () => toast("Wow so easy!");
